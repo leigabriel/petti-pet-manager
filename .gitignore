@@ -1,0 +1,45 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/dist
+
+# environment
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+/.nx
+/.nx/cache
+/.vscode/*
+!/.vscode/extensions.json
+.idea
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional eslint cache
+.eslintcache
+
+# Android
+/android/
+
+# credentials and signing keys
+*.jks
+*.keystore
+key.properties
+google-services.json
+firebase-adminsdk*.json
+*service-account*.json
+*.pem
+*.p12
