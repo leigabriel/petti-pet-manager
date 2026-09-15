@@ -20,10 +20,10 @@ const Home = () => {
             <section className="font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace] flex min-h-[calc(100dvh-184px-env(safe-area-inset-top)-env(safe-area-inset-bottom))] flex-col items-center justify-center text-center">
                 <div>
                     <h1 className="m-0 font-[Mistral,Brush_Script_MT,cursive] text-[clamp(42px,13vw,62px)] leading-[.98] font-normal text-[#1912d1] [@media(max-height:650px)]:text-[38px]">
-                        Hello, pet person.
+                        Hello, Lei!
                     </h1>
                     <p className="mt-2.5 text-[13px] leading-[1.55] text-[#5f5f75] [@media(max-height:650px)]:mt-1.25">
-                        Keep the details that matter close at paw.
+                        Keep the details that matter close to your heart. Add your pets and view them anytime.
                     </p>
                 </div>
 
@@ -36,7 +36,7 @@ const Home = () => {
                 <div className="grid w-full max-w-105 grid-cols-2 gap-3">
                     <button
                         type="button"
-                        className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-[14px] border border-[#e2e2ee] bg-white px-2 py-3.5 text-[#1912d1] shadow-[0_12px_25px_rgb(25_18_209/12%)] transition-[transform,filter] duration-150 active:scale-97 active:brightness-94 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#ffcf40] [@media(max-height:650px)]:max-h-30"
+                        className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-[14px] border border-[#e2e2ee] bg-[#1912d1] px-2 py-3.5 text-white shadow-[0_12px_25px_rgb(25_18_209/12%)] transition-[transform,filter] duration-150 active:scale-97 active:brightness-94 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#ffcf40] [@media(max-height:650px)]:max-h-30"
                         onClick={() => setShowAddPet(true)}
                     >
                         <IonIcon className="text-[25px]" icon={addOutline} />
@@ -44,7 +44,7 @@ const Home = () => {
                     </button>
                     <button
                         type="button"
-                        className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-[14px] border border-[#e2e2ee] bg-white px-2 py-3.5 text-[#1912d1] shadow-[0_12px_25px_rgb(25_18_209/12%)] transition-[transform,filter] duration-150 active:scale-97 active:brightness-94 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#ffcf40] [@media(max-height:650px)]:max-h-30"
+                        className="flex aspect-square cursor-pointer flex-col items-center justify-center gap-2 rounded-[14px] border border-[#212631]/20 bg-[#ebebeb] px-2 py-3.5 text-[#1912d1] shadow-[0_12px_25px_rgb(25_18_209/12%)] transition-[transform,filter] duration-150 active:scale-97 active:brightness-94 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#ffcf40] [@media(max-height:650px)]:max-h-30"
                         onClick={() => navigate("/pets")}
                     >
                         <IonIcon className="text-[25px]" icon={listOutline} />

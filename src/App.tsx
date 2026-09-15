@@ -7,8 +7,7 @@ import {
   type AnimationBuilder,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import ExitConfirmModal from './components/ExitConfirmModal';
-import { useExitConfirmation } from './hooks/useExitConfirmation';
+import { useExitOnBack } from './hooks/useExitOnBack';
 import About from './pages/About';
 import Home from './pages/Home';
 import Pets from './pages/Pets';
@@ -40,7 +39,7 @@ const fadeTransition: AnimationBuilder = (_baseElement, options) => {
 setupIonicReact({ navAnimation: fadeTransition });
 
 const App: React.FC = () => {
-  const { showConfirm, confirmExit, cancelExit } = useExitConfirmation();
+  useExitOnBack();
 
   return (
     <IonApp>
@@ -54,11 +53,6 @@ const App: React.FC = () => {
           <Route path="*" element={<Navigate to="/welcome" replace />} />
         </IonRouterOutlet>
       </IonReactRouter>
-      <ExitConfirmModal
-        isOpen={showConfirm}
-        onConfirm={confirmExit}
-        onCancel={cancelExit}
-      />
     </IonApp>
   );
 };

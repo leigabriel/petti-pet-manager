@@ -5,8 +5,10 @@ import {
     push,
     query,
     ref,
+    remove,
     serverTimestamp,
     set,
+    update,
     type DataSnapshot,
     type Unsubscribe,
 } from "firebase/database";
@@ -17,7 +19,7 @@ let authentication: Promise<string> | null = null;
 
 export const getPetDataErrorMessage = (
     error: unknown,
-    action: "saved" | "loaded",
+    action: "saved" | "loaded" | "updated" | "deleted",
 ) => {
     const code =
         typeof error === "object" && error && "code" in error
@@ -88,6 +90,19 @@ export const savePet = async (pet: PetInput) => {
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
     });
+};
+
+export const updatePet = async (pet: Pet, values: PetInput) => {
+    const uid = await requireUser();
+    await update(ref(db, `users/${uid}/pets/${pet.id}`), {
+        ...values,
+        updatedAt: serverTimestamp(),
+    });
+};
+
+export const deletePet = async (pet: Pet) => {
+    const uid = await requireUser();
+    await remove(ref(db, `users/${uid}/pets/${pet.id}`));
 };
 
 export const subscribeToPets = async (
