@@ -28,11 +28,6 @@ const Pets = () => {
             (records) => {
                 if (disposed) return;
                 setPets(records);
-                setSelectedPet((current) =>
-                    current
-                        ? (records.find((pet) => pet.id === current.id) ?? null)
-                        : null,
-                );
                 setLoading(false);
             },
             (reason) => {

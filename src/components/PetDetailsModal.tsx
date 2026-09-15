@@ -1,6 +1,6 @@
 import { IonContent, IonIcon, IonModal, IonSpinner } from "@ionic/react";
 import { closeOutline } from "ionicons/icons";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { deletePet, getPetDataErrorMessage } from "../services/pets";
 import type { Pet } from "../types/pet";
 
@@ -39,6 +39,7 @@ const PetDetailsModal = ({
     onEdit,
     onDeleted,
 }: PetDetailsModalProps) => {
+    const modal = useRef<HTMLIonModalElement>(null);
     const [deleting, setDeleting] = useState(false);
     const [deleteError, setDeleteError] = useState("");
 
@@ -57,26 +58,32 @@ const PetDetailsModal = ({
         setDeleteError("");
         try {
             await deletePet(pet);
-            onDeleted();
+            await modal.current?.dismiss(undefined, "deleted");
         } catch (error) {
             setDeleteError(getPetDataErrorMessage(error, "deleted"));
-        } finally {
             setDeleting(false);
         }
     };
 
-    const close = () => {
-        if (!deleting) {
-            setDeleteError("");
+    const handleDismiss = (role?: string) => {
+        setDeleting(false);
+        setDeleteError("");
+
+        if (role === "deleted") {
+            onDeleted();
+        } else {
             onClose();
         }
     };
 
     return (
         <IonModal
+            ref={modal}
             isOpen={Boolean(pet)}
-            canDismiss={!deleting}
-            onDidDismiss={close}
+            canDismiss={async (_data, role) =>
+                role === "deleted" || !deleting
+            }
+            onDidDismiss={(event) => handleDismiss(event.detail.role)}
             className="items-end [--width:min(100%,620px)] [--height:min(92%,800px)] [--border-radius:22px_22px_0_0] min-[700px]:items-center min-[700px]:[--border-radius:22px] [&::part(content)]:shadow-[0_-20px_55px_rgb(8_6_78/35%)]"
         >
             <IonContent className="[--background:#f7f7fb] [--color:#11112a] font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace]">
@@ -91,7 +98,7 @@ const PetDetailsModal = ({
                                 className="grid size-11 shrink-0 cursor-pointer place-items-center border-0 bg-transparent p-0 text-[26px] text-[#1912d1] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-[#ffcf40] disabled:opacity-50"
                                 aria-label="Close details"
                                 disabled={deleting}
-                                onClick={close}
+                                onClick={() => modal.current?.dismiss()}
                             >
                                 <IonIcon icon={closeOutline} />
                             </button>
