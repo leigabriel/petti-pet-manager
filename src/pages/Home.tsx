@@ -17,10 +17,10 @@ const Home = () => {
 
     return (
         <AppShell title="Home">
-            <section className="font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace] flex min-h-[calc(100dvh-184px-env(safe-area-inset-top)-env(safe-area-inset-bottom))] flex-col items-center justify-center text-center">
+            <section className="flex min-h-[calc(100dvh-184px-env(safe-area-inset-top)-env(safe-area-inset-bottom))] flex-col items-center justify-center text-center">
                 <div>
                     <h1 className="m-0 font-[Mistral,Brush_Script_MT,cursive] text-[clamp(42px,13vw,62px)] leading-[.98] font-normal text-[#1912d1] [@media(max-height:650px)]:text-[38px]">
-                        Hello, Lei!
+                        Hello Lei!
                     </h1>
                     <p className="mt-2.5 text-[13px] leading-[1.55] text-[#5f5f75] [@media(max-height:650px)]:mt-1.25">
                         Keep the details that matter close to your heart. Add your pets and view them anytime.

@@ -2,7 +2,7 @@ import AppShell from "../components/AppShell";
 
 const About = () => (
     <AppShell title="About">
-        <section className="mx-auto grid font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace] min-h-[calc(100dvh-184px-env(safe-area-inset-top)-env(safe-area-inset-bottom))] w-full max-w-137.5 place-items-center content-center gap-5.5">
+        <section className="mx-auto grid min-h-[calc(100dvh-184px-env(safe-area-inset-top)-env(safe-area-inset-bottom))] w-full max-w-137.5 place-items-center content-center gap-5.5">
             <img
                 className="max-h-[23dvh] w-[min(45vw,180px)] object-contain"
                 src="/images/petti.png"

@@ -170,7 +170,7 @@ const AddPetModal = ({ isOpen, onClose, onSaved, pet }: AddPetModalProps) => {
             onWillPresent={prepareForm}
             className="items-end [--width:min(100%,480px)] [--height:min(92dvh,680px)] [--border-radius:24px_24px_0_0] [--backdrop-opacity:.42] min-[700px]:items-center min-[700px]:[--border-radius:24px] [&::part(content)]:shadow-[0_-20px_55px_rgb(8_6_78/30%)]"
         >
-            <IonContent className="[--background:#fff] [--color:#11112a] font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace]">
+            <IonContent className="[--background:#fff] [--color:#11112a]">
                 <div className="flex h-full flex-col overflow-hidden">
                     <div className="shrink-0 border-b border-[#e7e7ef] bg-white px-5 pt-2.5 pb-4 min-[700px]:pt-5">
                         <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-[#d6d6e2] min-[700px]:hidden" />
@@ -201,7 +201,7 @@ const AddPetModal = ({ isOpen, onClose, onSaved, pet }: AddPetModalProps) => {
                         className="flex min-h-0 flex-1 flex-col overflow-hidden"
                     >
                         <div className="grid min-h-0 flex-1 content-start grid-cols-1 gap-3.5 overflow-y-auto px-4 py-4 min-[400px]:px-5">
-                            {input("name", "Pet name", "text", "e.g. Mochi")}
+                            {input("name", "Pet name", "text", "e.g. Layi")}
                             <div className="grid min-w-0 grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)_minmax(64px,.65fr)] gap-2 min-[400px]:gap-3">
                                 {input(
                                     "animalType",
@@ -209,14 +209,14 @@ const AddPetModal = ({ isOpen, onClose, onSaved, pet }: AddPetModalProps) => {
                                     "text",
                                     "Cat",
                                 )}
-                                {input("breed", "Breed", "text", "Siamese")}
+                                {input("breed", "Breed", "text", "Domestic")}
                                 {input("age", "Age", "number", "3")}
                             </div>
                             {input(
                                 "ownerName",
                                 "Owner name",
                                 "text",
-                                "Full name",
+                                "Full name of the owner",
                             )}
                             <label className="grid min-w-0 gap-1.5 text-[11px] font-bold tracking-[.01em] text-[#414158]">
                                 <span>Note</span>

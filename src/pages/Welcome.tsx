@@ -53,7 +53,7 @@ const Welcome = () => {
                         className={`w-full pt-10 transition-opacity duration-700 ${contentReady ? "opacity-100" : "opacity-0"}`}
                     />
                     <main
-                        className={`flex-1 flex flex-col justify-center items-center px-8 py-4 text-center font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace] tracking-[-0.015em] transition-opacity duration-700 ${contentReady ? "opacity-100" : "opacity-0"}`}
+                        className={`flex-1 flex flex-col justify-center items-center px-8 py-4 text-center tracking-[-0.015em] transition-opacity duration-700 ${contentReady ? "opacity-100" : "opacity-0"}`}
                     >
                         <div className="space-y-6 max-w-100">
                             <p className="text-[50px] font-[Mistral,Brush_Script_MT,cursive] text-white font-medium tracking-tight leading-snug">

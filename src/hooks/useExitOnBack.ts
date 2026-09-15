@@ -8,7 +8,13 @@ export function useExitOnBack() {
 
         let handler: { remove: () => void } | undefined;
 
-        App.addListener("backButton", () => App.exitApp()).then((listener) => {
+        App.addListener("backButton", ({ canGoBack }) => {
+            if (canGoBack) {
+                window.history.back();
+            } else {
+                void App.exitApp();
+            }
+        }).then((listener) => {
             handler = listener;
         });
 

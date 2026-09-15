@@ -86,7 +86,7 @@ const PetDetailsModal = ({
             onDidDismiss={(event) => handleDismiss(event.detail.role)}
             className="items-end [--width:min(100%,620px)] [--height:min(92%,800px)] [--border-radius:22px_22px_0_0] min-[700px]:items-center min-[700px]:[--border-radius:22px] [&::part(content)]:shadow-[0_-20px_55px_rgb(8_6_78/35%)]"
         >
-            <IonContent className="[--background:#f7f7fb] [--color:#11112a] font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace]">
+            <IonContent className="[--background:#f7f7fb] [--color:#11112a]">
                 {pet && (
                     <div className="mx-auto min-h-full w-full max-w-140 px-5 pt-6 pb-[calc(28px+env(safe-area-inset-bottom))]">
                         <div className="mb-5 flex items-start justify-between gap-4">

@@ -9,7 +9,7 @@ interface AppShellProps {
 }
 
 const AppShell = ({ title, children }: AppShellProps) => (
-    <IonPage className="[--background:#fff] font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace] text-[#11112a]">
+    <IonPage className="[--background:#fff] text-[#11112a]">
         <AppHeader title={title} />
         <IonContent
             fullscreen

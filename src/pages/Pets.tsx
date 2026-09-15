@@ -54,7 +54,7 @@ const Pets = () => {
 
     return (
         <AppShell title="Pets">
-            <section className="mx-auto font-[IoskeleyMono,Space_Mono,Menlo,Monaco,Consolas,monospace] w-full max-w-140">
+            <section className="mx-auto w-full max-w-140">
                 <div className="my-3.5 mb-6.5 flex items-end justify-between gap-4">
                     <div>
                         <h1 className="mt-1 font-[Mistral,Brush_Script_MT,cursive] text-[clamp(42px,13vw,62px)] leading-[.98] font-normal text-[#1912d1]">
